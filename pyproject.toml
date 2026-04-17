@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hermes-project-worker"
+version = "0.1.0"
+description = "Standalone project orchestration engine that uses Hermes as an execution backend."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{ name = "Hermes Agent" }]
+dependencies = [
+  "PyYAML>=6.0,<7",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8,<9",
+]
+mcp = [
+  "mcp>=1,<2",
+]
+
+[project.scripts]
+hpw = "hermes_project_worker.cli:run"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

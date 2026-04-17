@@ -1,0 +1,19 @@
+name: project-worker
+version: 0.1.0
+description: Hermes integration layer for the standalone Project Worker engine.
+provides_tools:
+  - project_worker_list
+  - project_worker_show
+  - project_worker_enqueue
+  - project_worker_run
+  - project_worker_approvals
+  - project_worker_approve
+  - project_worker_reject
+provides_commands:
+  - pw list
+  - pw show
+  - pw nudge
+  - pw run
+  - pw approvals
+  - pw approve
+  - pw reject
